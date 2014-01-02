@@ -661,7 +661,6 @@ static void hs_imp_detec_func(struct work_struct *work)
 	if(rt5501_status == RT5501_SUSPEND)
 		set_rt5501_amp(1);
 
-	wake_unlock(&hs->hs_wake_lock);
 }
 
 static void volume_ramp_func(struct work_struct *work)
