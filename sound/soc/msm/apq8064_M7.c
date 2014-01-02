@@ -81,31 +81,16 @@
 #define TABLA_MBHC_DEF_BUTTONS 8
 #define TABLA_MBHC_DEF_RLOADS 5
 #define HAC_PAMP_GPIO	6
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 #ifdef CONFIG_MACH_M7_WLJ
-=======
-
-#ifdef CONFIG_MACH_DUMMY
->>>>>>> 793f8cf... revert camera revamp
 #define RCV_PAMP_PMGPIO	24
 #else
 #define RCV_PAMP_GPIO    67
 #endif
 
-<<<<<<< HEAD
 #ifdef CONFIG_MACH_M7_WLJ
 #define RCV_SPK_SEL_PMGPIO    5
 #else
-=======
-#define RCV_PAMP_GPIO    67
->>>>>>> d4cd458... Initial Monarudo Bringup
-=======
-#ifdef CONFIG_MACH_DUMMY
-#define RCV_SPK_SEL_PMGPIO    5
-#else
->>>>>>> 793f8cf... revert camera revamp
 #define RCV_SPK_SEL_PMGPIO    24
 #endif
 
@@ -494,10 +479,6 @@ static struct snd_soc_ops msm8960_i2s_be_ops = {
 
 static void msm_ext_spk_power_amp_on(u32 spk)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 793f8cf... revert camera revamp
 	if (spk & (RCV_AMP_POS | RCV_AMP_NEG)) {
 		if ((msm_rcv_pamp & RCV_AMP_POS) &&
 			(msm_rcv_pamp & RCV_AMP_NEG)) {
@@ -514,11 +495,7 @@ static void msm_ext_spk_power_amp_on(u32 spk)
 
 
 			pr_info("rcv amp on++");
-<<<<<<< HEAD
 #ifdef CONFIG_MACH_M7_WLJ
-=======
-#ifdef CONFIG_MACH_DUMMY
->>>>>>> 793f8cf... revert camera revamp
 			gpio_direction_output(PM8921_GPIO_PM_TO_SYS(RCV_PAMP_PMGPIO), 1);
 #else
 			gpio_direction_output(RCV_PAMP_GPIO, 1);
@@ -559,12 +536,6 @@ static void msm_ext_spk_power_amp_on(u32 spk)
 			usleep_range(4000, 4000);
 		}
 	} else if (spk & (BOTTOM_SPK_AMP_POS | BOTTOM_SPK_AMP_NEG)) {
-<<<<<<< HEAD
-=======
-	if (spk & (BOTTOM_SPK_AMP_POS | BOTTOM_SPK_AMP_NEG)) {
->>>>>>> d4cd458... Initial Monarudo Bringup
-=======
->>>>>>> 793f8cf... revert camera revamp
 
 		if ((msm_ext_bottom_spk_pamp & BOTTOM_SPK_AMP_POS) &&
 			(msm_ext_bottom_spk_pamp & BOTTOM_SPK_AMP_NEG)) {
@@ -633,16 +604,9 @@ static void msm_ext_spk_power_amp_off(u32 spk)
 		if (!msm_rcv_pamp)
 			return;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 		pr_info("rcv amp off ++");
 #ifdef CONFIG_MACH_M7_WLJ
-=======
-
-		pr_info("rcv amp off ++");
-#ifdef CONFIG_MACH_DUMMY
->>>>>>> 793f8cf... revert camera revamp
 		gpio_direction_output(PM8921_GPIO_PM_TO_SYS(RCV_PAMP_PMGPIO), 0);
 #else
 		gpio_direction_output(RCV_PAMP_GPIO, 0);
@@ -658,12 +622,6 @@ static void msm_ext_spk_power_amp_off(u32 spk)
 		usleep_range(4000, 4000);
 	} else if (spk & (HS_AMP_POS | HS_AMP_NEG)) {
 		if (!msm_hs_pamp)
-<<<<<<< HEAD
-=======
-		if (!msm_ext_bottom_spk_pamp)
->>>>>>> d4cd458... Initial Monarudo Bringup
-=======
->>>>>>> 793f8cf... revert camera revamp
 			return;
 
 		
