@@ -256,13 +256,15 @@ static struct pm8xxx_led_configure pm8921_led_info[] = {
                 .flags          = PM8XXX_ID_LED_1,
                 .function_flags = LED_PWM_FUNCTION | LED_BLINK_FUNCTION,
                 .out_current    = 2,
+		.pwm_coefficient = 5,
                 .blink_duty_per_2sec = 10000,
         },
         [2] = {
                 .name           = "amber",
                 .flags          = PM8XXX_ID_LED_2,
                 .function_flags = LED_PWM_FUNCTION | LED_BLINK_FUNCTION,
-		.out_current    = 3
+		.out_current    = 3,
+		.pwm_coefficient = 5,
         },
 };
 
@@ -532,7 +534,8 @@ __setup("androidboot.dq=", check_dq_setup);
 static struct pm8xxx_vibrator_platform_data pm8xxx_vib_pdata = {
 	.initial_vibrate_ms = 0,
 	.max_timeout_ms = 15000,
-	.level_mV = 3000,
+	.level_mV = 2700,
+	.threshold = 500,
 	};
 
 static struct pm8921_platform_data
@@ -602,4 +605,12 @@ void __init m7wl_init_pmic(void)
 	m7wl_pm8921_platform_data.num_regulators =
 					m7wl_pm8921_regulator_pdata_len;
 
+}
+
+void __init m7wl_init_pmic_register_cam_cb(void *cam_vcm_on_cb, void *cam_vcm_off_cb)
+{
+	if (cam_vcm_on_cb)
+		pm8xxx_vib_pdata.camera_cb = cam_vcm_on_cb;
+	if (cam_vcm_off_cb)
+		pm8xxx_vib_pdata.camera_off_cb = cam_vcm_off_cb;
 }
