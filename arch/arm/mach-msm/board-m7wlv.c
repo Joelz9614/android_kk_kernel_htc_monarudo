@@ -4961,7 +4961,6 @@ struct i2c_registry {
 };
 
 static struct regulator *motion_sensor_vreg_8921_l17;
-static DEFINE_MUTEX(sensor_lock);
 
 static int m7wl_mpu3050_sensor_power_LPM(int on)
 {
