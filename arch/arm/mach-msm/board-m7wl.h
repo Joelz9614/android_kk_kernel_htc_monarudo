@@ -125,6 +125,7 @@ int __init m7wl_init_keypad(void);
 #define APQ_BOOT_CONFIG_0	GPIO(87)
 #define HSIC_STROBE		GPIO(88)
 #define HSIC_DATA		GPIO(89)
+#define VREG_S4_1V8_PVT GPIO(28) 
 
 #define CAM_VCM_PD		PMGPIO(1)
 #define MHL_RSTz		PMGPIO(2)
