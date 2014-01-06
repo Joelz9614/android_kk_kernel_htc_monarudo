@@ -549,6 +549,11 @@ config IKCONFIG
 	  It can also be extracted from a running kernel by reading
 	  /proc/config.gz if enabled (below).
 
+config GPE_VER
+  tristate "GPE Version Number"
+  help
+    If you say yes here you get GPE specific version number
+
 config IKCONFIG_PROC
 	bool "Enable access to .config through /proc/config.gz"
 	depends on IKCONFIG && PROC_FS
