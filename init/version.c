@@ -47,5 +47,10 @@ const char linux_banner[] =
 
 const char linux_proc_banner[] =
 	"%s version %s"
+#ifdef CONFIG_GPE_VER
+        " (root@abm009)"
+#endif
+#ifndef CONFIG_GPE_VER
         " (root@abm012)"
+#endif
 	" (" LINUX_COMPILER ") %s\n";
