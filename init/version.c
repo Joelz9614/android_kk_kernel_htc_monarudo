@@ -42,7 +42,7 @@ const char linux_banner[] =
   "Linux version " UTS_RELEASE " (root@abm009) (" LINUX_COMPILER ") " UTS_VERSION "\n";
 #endif
 #ifndef CONFIG_GPE_VER
-  "Linux version " UTS_RELEASE " (root@abm012) (" LINUX_COMPILER ") " UTS_VERSION "\n";
+  "Linux version " UTS_RELEASE " (root@abm006) (" LINUX_COMPILER ") " UTS_VERSION "\n";
 #endif
 
 const char linux_proc_banner[] =
@@ -51,6 +51,6 @@ const char linux_proc_banner[] =
         " (root@abm009)"
 #endif
 #ifndef CONFIG_GPE_VER
-        " (root@abm012)"
+        " (root@abm006)"
 #endif
 	" (" LINUX_COMPILER ") %s\n";
